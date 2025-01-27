@@ -1,0 +1,201 @@
+*{
+    box-sizing: border-box;
+}
+:root {
+    --bg-light: #ffffff;
+    --bg-dark: #1a1a2e;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --primary-color: #6a5acd;
+    --secondary-color: #8a2be2;
+    --gradient-bg: linear-gradient(135deg, #6a5acd, #8a2be2, #1e90ff);
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: background-color 0.5s, color 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--gradient-bg);
+    color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.search-bar input {
+    padding: 12px;
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    width: 350px;
+    margin-right: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 10px var(--primary-color);
+    outline: none;
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.search-bar button:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.weather-details {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: var(--gradient-bg);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.weather-details:hover {
+    transform: scale(1.05);
+}
+
+.weather-details h2 {
+    margin-bottom: 10px;
+    color: #ffe4b5;
+}
+
+.toggle-theme {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    border: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.toggle-theme:hover {
+    color: #ffe4b5;
+    text-decoration: underline;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header, .weather-details {
+    background-size: 200% 200%;
+    animation: gradientMove 6s ease infinite;
+}
+
+@media (max-width: 550px) {
+    .toggle-theme{
+        font-size: 1rem;
+    }
+header {
+flex-direction: column;
+text-align: center;
+padding: 15px;
+}
+
+header h1 {
+font-size: 2rem;
+margin-bottom: 10px;
+}
+
+.search-bar {
+flex-direction: column;
+gap: 10px;
+}
+
+.search-bar input {
+width: 100%;
+}
+
+.search-bar button {
+width: 100%;
+font-size: 1rem;
+}
+
+.weather-details {
+width: 95%;
+padding: 15px;
+}
+}
+
+@media (max-width: 416px) {
+header {
+width: 100%; /* Fix header width */
+padding: 10px;
+}
+
+header h1 {
+font-size: 2rem;
+}
+
+.search-bar input {
+font-size: 1rem;
+}
+
+.search-bar button {
+font-size: 0.9rem;
+padding: 10px 20px;
+}
+
+.weather-details {
+font-size: 0.9rem;
+}
+
+.toggle-theme {
+font-size: 0.9rem; /* Further reduced font size for small screens */
+}
+}
